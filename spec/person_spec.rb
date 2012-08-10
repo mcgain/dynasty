@@ -1,3 +1,5 @@
+require_relative "../app/person"
+
 describe "Person" do 
   it "Should have a name" do
     person = Person.new
