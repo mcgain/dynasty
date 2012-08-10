@@ -1,8 +1,7 @@
 class Person
-  attr_accessor :name, :children, :spouses
+  attr_accessor :name, :relationships
 
   def initialize
-    @children = []
-    @spouses = []
+    @relationships = []
   end
 end

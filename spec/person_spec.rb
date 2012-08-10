@@ -7,15 +7,11 @@ describe "Person" do
     person.name.should == "Fred Freddson"
   end
 
-  it "should have a list of children" do
+  it "may have a relationship" do
     person = Person.new
-    person.children << Person.new
-    person.children.count.should == 1
-  end
-
-  it "may have a spouse" do
-    person = Person.new
-    person.spouses << Person.new
-    person.spouses.count.should == 1
+    person.relationships << Person.new
+    person.relationships.count.should == 1
+    person.relationships << Person.new
+    person.relationships.count.should == 2
   end
 end
