@@ -1,3 +1,6 @@
+class MemberNotInCollection < Exception
+end
+
 class Relationship
   attr_accessor :children
   attr_reader :members
@@ -8,6 +11,7 @@ class Relationship
   end
 
   def other(person)
+    raise MemberNotInCollection unless members.include?(person) 
     (members - [person]).first
   end
 end
