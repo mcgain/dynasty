@@ -22,7 +22,7 @@ describe "Dynasty" do
     end
 
     it "should be related to a person" do
-
+      @relationships.first.other(@dynasty.root).should be_a Person
     end
     it "should have some children" do
       #    dynasty.root.relationships.first.children.should have(1).items 

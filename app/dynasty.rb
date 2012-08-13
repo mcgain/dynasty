@@ -3,6 +3,8 @@ class Dynasty
 
   def generate
     @root = Person.new
-    @root.relationships << Relationship.new
+    spouse = Person.new
+    relationship = Relationship.new(@root, spouse)
+    @root.relationships << relationship 
   end
 end
