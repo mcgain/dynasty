@@ -12,6 +12,10 @@ describe "Dynasty" do
     end
   end
 
+  it "generates a 3 generation hierarchy" do
+    @dynasty.generations.count.should == 3
+  end
+
   describe "Relationships" do
     before do
       @relationships = @dynasty.root.relationships
@@ -30,5 +34,13 @@ describe "Dynasty" do
     end
 
   end
+
+  describe "generations" do
+    it "raises an error if there are no generations" do
+      expect { Dynasty.new.generations }.to raise_error NoGenerations
+    end
+  end
 end
+
+
 

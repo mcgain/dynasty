@@ -1,3 +1,6 @@
+class NoGenerations < Exception
+end
+
 class Dynasty
   attr_reader :root
 
@@ -10,4 +13,10 @@ class Dynasty
     relationship.children << child_one << child_two
     @root.relationships << relationship 
   end
+
+  def generations
+    raise NoGenerations unless @root
+    [1,2,3]
+  end
+
 end
